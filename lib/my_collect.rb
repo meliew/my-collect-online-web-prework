@@ -1,13 +1,13 @@
 def my_collect(array)
   if block_given?
-    empty_array = []
-    counter = 0
-    while counter < array.length
-      yield (array[counter])
-      counter += 1
-      empty_array << counter
+    new_array = []
+    i = 0
+    while i < array.length
+      new_array.push(yield array[i])
+      i += 1
+
     end
-    empty_array
+    new array
   else
     puts "No block was given"
   end
